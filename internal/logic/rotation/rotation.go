@@ -56,7 +56,7 @@ func (s *sRotation) Update(ctx context.Context, in model.RotationUpdateInput) er
 		_, err := dao.RotationInfo.
 			Ctx(ctx).
 			Data(in).
-			// FieldsEX 这里是终点
+			// FieldsEX 这里是重点
 			FieldsEx(dao.RotationInfo.Columns().Id).
 			Where(dao.RotationInfo.Columns().Id, in.Id).
 			Update()
