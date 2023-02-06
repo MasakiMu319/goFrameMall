@@ -1,0 +1,26 @@
+2023-02-06 12:56:41.738 [DEBU] {40230a0959234117167dc628401f535f} [ 67 ms] [default] [goFrameMall] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-06 12:56:41.746 [DEBU] {40230a0959234117167dc628401f535f} [  7 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `rotation_info`(`sort`,`pic_url`,`created_at`,`link`,`updated_at`) VALUES(1,'https://typora-photos.oss-cn-shenzhen.aliyuncs.com/夏日花火.jpg','2023-02-06 12:56:41','https://flowus.cn/0a079994-85a9-4b84-8d59-a18b77ebd5cb','2023-02-06 12:56:41') 
+2023-02-06 14:55:04.233 [DEBU] {a83887bace29411759417250ef0868b2} [  4 ms] [default] [goFrameMall] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-06 14:55:04.244 [DEBU] {a83887bace29411759417250ef0868b2} [  9 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `rotation_info`(`updated_at`,`link`,`sort`,`created_at`,`pic_url`) VALUES('2023-02-06 14:55:04','https://flowus.cn/0a079994-85a9-4b84-8d59-a18b77ebd5cb',1,'2023-02-06 14:55:04','https://typora-photos.oss-cn-shenzhen.aliyuncs.com/夏日花火.jpg') 
+2023-02-06 14:59:18.848 [DEBU] {088b92020a2a41175d4172504177ecf8} [  8 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `rotation_info`(`sort`,`pic_url`,`created_at`,`link`,`updated_at`) VALUES(1,'https://typora-photos.oss-cn-shenzhen.aliyuncs.com/夏日花火.jpg','2023-02-06 14:59:18','https://flowus.cn/0a079994-85a9-4b84-8d59-a18b77ebd5cb','2023-02-06 14:59:18') 
+2023-02-06 16:41:49.665 [DEBU] {20501957a12f4117fbfae53d4d611913} [  9 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-02-06 16:41:49.673 [DEBU] {20501957a12f4117fbfae53d4d611913} [  7 ms] [default] [goFrameMall] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-06 16:41:49.679 [DEBU] {20501957a12f4117fbfae53d4d611913} [  6 ms] [default] [goFrameMall] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `deleted_at`='2023-02-06 16:41:49' WHERE (`id`=12) AND `deleted_at` IS NULL
+2023-02-06 16:41:49.681 [DEBU] {20501957a12f4117fbfae53d4d611913} [  2 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
+2023-02-06 17:10:16.807 [DEBU] {302183952f314117602c140cbaf14f92} [  6 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-02-06 17:10:16.816 [DEBU] {302183952f314117602c140cbaf14f92} [  8 ms] [default] [goFrameMall] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-06 17:10:16.819 [DEBU] {302183952f314117602c140cbaf14f92} [  3 ms] [default] [goFrameMall] [rows:0  ] [txid:1] UPDATE `rotation_info` SET `deleted_at`='2023-02-06 17:10:16' WHERE (`id`=12) AND `deleted_at` IS NULL
+2023-02-06 17:10:16.819 [DEBU] {302183952f314117602c140cbaf14f92} [  0 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
+2023-02-06 17:10:38.894 [DEBU] {f00a28ba34314117a4759c0daebbc209} [  3 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-02-06 17:10:38.899 [DEBU] {f00a28ba34314117a4759c0daebbc209} [  5 ms] [default] [goFrameMall] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-06 17:10:38.902 [DEBU] {f00a28ba34314117a4759c0daebbc209} [  3 ms] [default] [goFrameMall] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `deleted_at`='2023-02-06 17:10:38' WHERE (`id`=13) AND `deleted_at` IS NULL
+2023-02-06 17:10:38.904 [DEBU] {f00a28ba34314117a4759c0daebbc209} [  2 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
+2023-02-06 17:29:12.590 [DEBU] {a0c65607383241173419d77eb105d568} [  7 ms] [default] [goFrameMall] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-06 17:29:12.596 [DEBU] {a0c65607383241173419d77eb105d568} [  5 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `rotation_info`(`pic_url`,`link`,`created_at`,`sort`,`updated_at`) VALUES('https://typora-photos.oss-cn-shenzhen.aliyuncs.com/夏日花火.jpg','https://flowus.cn/0a079994-85a9-4b84-8d59-a18b77ebd5cb','2023-02-06 17:29:12',1,'2023-02-06 17:29:12') 
+2023-02-06 17:31:25.632 [DEBU] {500dab01573241173519d77e683ea884} [  2 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-02-06 17:31:25.637 [DEBU] {500dab01573241173519d77e683ea884} [  4 ms] [default] [goFrameMall] [rows:1  ] [txid:1] UPDATE `rotation_info` SET `deleted_at`='2023-02-06 17:31:25' WHERE (`id`=14) AND `deleted_at` IS NULL
+2023-02-06 17:31:25.639 [DEBU] {500dab01573241173519d77e683ea884} [  2 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
+2023-02-06 17:55:38.748 [DEBU] {383a0756a9334117294722586c696364} [  3 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-02-06 17:55:38.754 [DEBU] {383a0756a9334117294722586c696364} [  5 ms] [default] [goFrameMall] [rows:7  ] [txid:1] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-06 17:55:38.758 [DEBU] {383a0756a9334117294722586c696364} [  3 ms] [default] [goFrameMall] [rows:1  ] [txid:1] DELETE FROM `rotation_info` WHERE `id`=14
+2023-02-06 17:55:38.759 [DEBU] {383a0756a9334117294722586c696364} [  1 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
