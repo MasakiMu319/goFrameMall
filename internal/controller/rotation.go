@@ -42,3 +42,20 @@ func (a *cRotation) Update(ctx context.Context, req *backend.RotationUpdateReq) 
 	})
 	return
 }
+
+// List rotation list
+func (a *cRotation) List(ctx context.Context, req *backend.RotationGetListCommonReq) (res *backend.RotationGetListCommonRes, err error) {
+	getListRes, err := service.Rotation().GetList(ctx, model.RotationGetListInput{
+		Page: req.Page,
+		Size: req.Size,
+		Sort: req.Sort,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &backend.RotationGetListCommonRes{
+		List:  getListRes.List,
+		Page:  getListRes.Page,
+		Total: getListRes.Total,
+		Size:  getListRes.Size}, nil
+}

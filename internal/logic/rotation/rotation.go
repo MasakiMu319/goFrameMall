@@ -1,4 +1,4 @@
-package content
+package rotation
 
 import (
 	"context"
@@ -7,6 +7,7 @@ import (
 	"github.com/gogf/gf/v2/frame/g"
 	"goFrameMall/internal/dao"
 	"goFrameMall/internal/model"
+	"goFrameMall/internal/model/entity"
 	"goFrameMall/internal/service"
 )
 
@@ -62,4 +63,39 @@ func (s *sRotation) Update(ctx context.Context, in model.RotationUpdateInput) er
 			Update()
 		return err
 	})
+}
+
+// GetList 查询内容列表
+func (s *sRotation) GetList(ctx context.Context, in model.RotationGetListInput) (out *model.RotationGetListOutput, err error) {
+	var (
+		m = dao.RotationInfo.Ctx(ctx)
+	)
+	out = &model.RotationGetListOutput{
+		Page: in.Page,
+		Size: in.Size,
+	}
+	// 分页查询
+	listModel := m.Page(in.Page, in.Size)
+	// 排序方式
+	listModel = listModel.OrderDesc(dao.RotationInfo.Columns().Id)
+	// 执行查询
+	var list []*entity.RotationInfo
+	if err := listModel.Scan(&list); err != nil {
+		return out, err
+	}
+	// 没有数据
+	if len(list) == 0 {
+		return out, nil
+	}
+	out.Total, err = m.Count()
+	if err != nil {
+		return out, err
+	}
+	// Rotation
+	// TODO: ScanList 是从 List 这个 RotationGetListOutputItem 结构中取出 Rotation 字段
+	//if err := listModel.ScanList(&out.List, "Rotation"); err != nil {
+	if err := listModel.Scan(&out.List); err != nil {
+		return out, err
+	}
+	return
 }
