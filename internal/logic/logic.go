@@ -5,5 +5,6 @@
 package logic
 
 import (
+	_ "goFrameMall/internal/logic/position"
 	_ "goFrameMall/internal/logic/rotation"
 )
