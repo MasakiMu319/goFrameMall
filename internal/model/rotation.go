@@ -16,7 +16,7 @@ type RotationCreateInput struct {
 
 // RotationCreateOutput 创建轮播图返回结果
 type RotationCreateOutput struct {
-	RotationId int `json:"rotation-id"`
+	RotationId int `json:"rotation_id"`
 }
 
 // RotationUpdateInput 修改轮播图
