@@ -18,7 +18,7 @@ type PositionCreateInput struct {
 
 // PositionCreateOutput 创建手工位返回结果
 type PositionCreateOutput struct {
-	PositionId int `json:"position-id"`
+	PositionId int `json:"position_id"`
 }
 
 // PositionUpdateInput 修改手工位
