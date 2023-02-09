@@ -2,6 +2,7 @@ package controller
 
 import (
 	"context"
+	"github.com/gogf/gf/v2/util/gconv"
 	"goFrameMall/api/backend"
 	"goFrameMall/internal/model"
 	"goFrameMall/internal/service"
@@ -59,4 +60,12 @@ func (a *cAdmin) List(ctx context.Context, req *backend.AdminGetListCommonReq) (
 		Page:  getListRes.Page,
 		Total: getListRes.Total,
 		Size:  getListRes.Size}, nil
+}
+
+func (c *cAdmin) Info(ctx context.Context, req *backend.AdminGetInfoReq) (res *backend.AdminGetInfoRes, err error) {
+	return &backend.AdminGetInfoRes{
+		Id:          gconv.Int(service.Auth().GetIdentity(ctx)),
+		IdentityKey: service.Auth().IdentityKey,
+		Payload:     service.Auth().GetPayload(ctx),
+	}, nil
 }
