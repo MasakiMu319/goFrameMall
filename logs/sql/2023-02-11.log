@@ -11,3 +11,5 @@
 2023-02-11 23:24:20.240 [DEBU] {d04876f07fce421730d78c546d67110c} [  1 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `id` DESC LIMIT 0,10
 2023-02-11 23:24:20.240 [DEBU] {d04876f07fce421730d78c546d67110c} [  0 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
 2023-02-11 23:24:20.241 [DEBU] {d04876f07fce421730d78c546d67110c} [  0 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`sort`,`pic_url`,`link`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `id` DESC LIMIT 0,10
+2023-02-11 23:58:34.793 [DEBU] {b02b494d5ed042176c89dc3525fc5ec2} [ 15 ms] [default] [goFrameMall] [rows:6  ] SHOW FULL COLUMNS FROM `role_info`
+2023-02-11 23:58:34.804 [DEBU] {b02b494d5ed042176c89dc3525fc5ec2} [ 10 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `role_info`(`name`,`desc`,`created_at`,`updated_at`) VALUES('角色测试','描述测试','2023-02-11 23:58:34','2023-02-11 23:58:34') 
