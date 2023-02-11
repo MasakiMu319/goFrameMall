@@ -2,3 +2,12 @@
 2023-02-11 17:25:26.488 [DEBU] {18905a35eaba42172004052e992380ea} [  2 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `id` DESC LIMIT 0,10
 2023-02-11 17:25:26.489 [DEBU] {18905a35eaba42172004052e992380ea} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
 2023-02-11 17:25:26.491 [DEBU] {18905a35eaba42172004052e992380ea} [  0 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`sort`,`pic_url`,`link`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `id` DESC LIMIT 0,10
+2023-02-11 23:19:07.322 [DEBU] {5035fc1437ce421753d8183bee38fa27} [ 15 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-02-11 23:19:07.325 [DEBU] {5035fc1437ce421753d8183bee38fa27} [  2 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info` WHERE (`created_at` BETWEEN '2023-02-11 00:00:00' AND '2023-02-11 23:59:59') AND (id)
+2023-02-11 23:21:29.929 [DEBU] {98b4ca4958ce421754d8183b1c7bc077} [  3 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info` WHERE (`created_at` BETWEEN '2023-02-11 00:00:00' AND '2023-02-11 23:59:59') AND (id)
+2023-02-11 23:23:18.193 [DEBU] {c0fea57e71ce42172fd78c54235407c7} [  6 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-02-11 23:23:18.194 [DEBU] {c0fea57e71ce42172fd78c54235407c7} [  0 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info` WHERE (`created_at` BETWEEN '2023-02-11 00:00:00' AND '2023-02-11 23:59:59') AND (id)
+2023-02-11 23:24:20.238 [DEBU] {d04876f07fce421730d78c546d67110c} [ 11 ms] [default] [goFrameMall] [rows:7  ] SHOW FULL COLUMNS FROM `rotation_info`
+2023-02-11 23:24:20.240 [DEBU] {d04876f07fce421730d78c546d67110c} [  1 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`pic_url`,`link`,`sort`,`created_at`,`updated_at`,`deleted_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `id` DESC LIMIT 0,10
+2023-02-11 23:24:20.240 [DEBU] {d04876f07fce421730d78c546d67110c} [  0 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `rotation_info` WHERE `deleted_at` IS NULL
+2023-02-11 23:24:20.241 [DEBU] {d04876f07fce421730d78c546d67110c} [  0 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`sort`,`pic_url`,`link`,`created_at`,`updated_at` FROM `rotation_info` WHERE `deleted_at` IS NULL ORDER BY `id` DESC LIMIT 0,10
