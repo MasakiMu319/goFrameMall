@@ -12,7 +12,7 @@ gfcli:
   # dao生成
   gen:
     dao:
-      - link:            "mysql:root:12345678@tcp(127.0.0.1:3306)/goFrameMall"
+      - link:            "mysql:root:12345678@tcp(127.0.0.1:3306)/goFrameMall?loc=Local"
         removePrefix:    "gf_"
         descriptionTag:  true
         noModelComment:  true
