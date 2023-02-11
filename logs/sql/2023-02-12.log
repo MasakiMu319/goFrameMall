@@ -1,0 +1,12 @@
+2023-02-12 00:36:41.836 [DEBU] {00f3e0c872d242177d94581b546bd2b8} [ 59 ms] [default] [goFrameMall] [rows:6  ] SHOW FULL COLUMNS FROM `role_info`
+2023-02-12 00:36:41.839 [DEBU] {00f3e0c872d242177d94581b546bd2b8} [  2 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`name`,`desc`,`created_at`,`updated_at`,`deleted_at` FROM `role_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-02-12 00:36:41.841 [DEBU] {00f3e0c872d242177d94581b546bd2b8} [  2 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `role_info` WHERE `deleted_at` IS NULL
+2023-02-12 00:36:41.842 [DEBU] {00f3e0c872d242177d94581b546bd2b8} [  1 ms] [default] [goFrameMall] [rows:3  ] SELECT `id`,`name`,`desc`,`created_at`,`updated_at` FROM `role_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-02-12 00:37:47.379 [DEBU] {00c1400e82d242177e94581b361a4a4f} [ 14 ms] [default] [goFrameMall] [rows:1  ] UPDATE `role_info` SET `name`=' 修改测试',`desc`='修改测试',`updated_at`='2023-02-12 00:37:47' WHERE (`id`=5) AND `deleted_at` IS NULL
+2023-02-12 00:38:08.948 [DEBU] {58d8b61487d242177f94581ba6f56715} [  3 ms] [default] [goFrameMall] [rows:1  ] UPDATE `role_info` SET `name`=' 修改测试',`desc`='修改测试',`updated_at`='2023-02-12 00:38:08' WHERE (`id`=5) AND `deleted_at` IS NULL
+2023-02-12 00:39:19.059 [DEBU] {b0c2896797d242178094581b9c9cb81b} [  5 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-02-12 00:39:19.061 [DEBU] {b0c2896797d242178094581b9c9cb81b} [  2 ms] [default] [goFrameMall] [rows:1  ] [txid:1] DELETE FROM `role_info` WHERE `id`=5
+2023-02-12 00:39:19.064 [DEBU] {b0c2896797d242178094581b9c9cb81b} [  2 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
+2023-02-12 00:41:05.289 [DEBU] {40e44923b0d242178194581b33aa705c} [  5 ms] [default] [goFrameMall] [rows:2  ] SELECT `id`,`name`,`desc`,`created_at`,`updated_at`,`deleted_at` FROM `role_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-02-12 00:41:05.290 [DEBU] {40e44923b0d242178194581b33aa705c} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `role_info` WHERE `deleted_at` IS NULL
+2023-02-12 00:41:05.290 [DEBU] {40e44923b0d242178194581b33aa705c} [  0 ms] [default] [goFrameMall] [rows:2  ] SELECT `id`,`name`,`desc`,`created_at`,`updated_at` FROM `role_info` WHERE `deleted_at` IS NULL LIMIT 0,10
