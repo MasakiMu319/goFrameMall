@@ -11,6 +11,7 @@ import (
 	_ "goFrameMall/internal/logic/login"
 	_ "goFrameMall/internal/logic/middleware"
 	_ "goFrameMall/internal/logic/position"
+	_ "goFrameMall/internal/logic/role"
 	_ "goFrameMall/internal/logic/rotation"
 	_ "goFrameMall/internal/logic/session"
 )
