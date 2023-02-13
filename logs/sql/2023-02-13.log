@@ -1,0 +1,3 @@
+2023-02-13 11:47:52.359 [DEBU] {d02e4e93a745431756bf9d2f57108daf} [ 12 ms] [default] [goFrameMall] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-02-13 11:47:52.368 [DEBU] {d02e4e93a745431756bf9d2f57108daf} [  7 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `role_permission_info`(`created_at`,`updated_at`,`role_id`,`permission_id`) VALUES('2023-02-13 11:47:52','2023-02-13 11:47:52',1,1) 
+2023-02-13 11:49:21.989 [DEBU] {601ad571bc45431757bf9d2f01e621eb} [ 11 ms] [default] [goFrameMall] [rows:1  ] DELETE FROM `role_permission_info` WHERE `role_id`=1 AND `permission_id`=1
