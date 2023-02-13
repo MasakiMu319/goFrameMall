@@ -25,7 +25,15 @@ func (s *sRole) Create(ctx context.Context, in model.RoleCreateInput) (out model
 	if err != nil {
 		return out, err
 	}
-	return model.RoleCreateOutput{RoleId: int(roleId)}, err
+	return model.RoleCreateOutput{RoleId: uint(roleId)}, err
+}
+
+func (s *sRole) AddPermission(ctx context.Context, in model.RoleAddPermissionInput) (out model.RoleAddPermissionOutput, err error) {
+	id, err := dao.RolePermissionInfo.Ctx(ctx).Data(in).InsertAndGetId()
+	if err != nil {
+		return model.RoleAddPermissionOutput{}, err
+	}
+	return model.RoleAddPermissionOutput{Id: uint(id)}, nil
 }
 
 func (s *sRole) Delete(ctx context.Context, id uint) error {
@@ -37,6 +45,17 @@ func (s *sRole) Delete(ctx context.Context, id uint) error {
 		}).Unscoped().Delete()
 		return err
 	})
+}
+
+func (s *sRole) DeletePermission(ctx context.Context, in model.RoleDeletePermissionInput) error {
+	_, err := dao.RolePermissionInfo.Ctx(ctx).Where(g.Map{
+		dao.RolePermissionInfo.Columns().RoleId:       in.RoleId,
+		dao.RolePermissionInfo.Columns().PermissionId: in.PermissionId,
+	}).Delete()
+	if err != nil {
+		return err
+	}
+	return err
 }
 
 // Update 修改
