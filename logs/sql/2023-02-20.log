@@ -5,3 +5,84 @@
 2023-02-20 09:14:58.453 [DEBU] {484464955f634517048e4625a0159069} [  1 ms] [default] [goFrameMall] [rows:0  ] DELETE FROM `role_permission_info` WHERE `permission_id`=1 AND `role_id`=1
 2023-02-20 09:15:02.690 [DEBU] {00f6609260634517058e4625bff7f3e3} [  1 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `role_permission_info`(`updated_at`,`role_id`,`permission_id`,`created_at`) VALUES('2023-02-20 09:15:02',1,1,'2023-02-20 09:15:02') 
 2023-02-20 09:15:18.992 [DEBU] {081aed5d64634517068e4625004a068c} [  3 ms] [default] [goFrameMall] [rows:1  ] DELETE FROM `role_permission_info` WHERE `permission_id`=1 AND `role_id`=1
+2023-02-20 09:43:11.902 [DEBU] {200ca9dee96445179733891be94ce639} [  8 ms] [default] [goFrameMall] [rows:6  ] SHOW FULL COLUMNS FROM `permission_info`
+2023-02-20 09:43:11.906 [DEBU] {200ca9dee96445179733891be94ce639} [  3 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `permission_info`(`name`,`path`,`created_at`,`updated_at`) VALUES('权限测试','权限路径测试','2023-02-20 09:43:11','2023-02-20 09:43:11') 
+2023-02-20 09:43:25.065 [ERRO] {007eb1efec6445179833891b14a2119f} [  2 ms] [default] [goFrameMall] [rows:0  ] INSERT INTO `permission_info`(`name`,`path`,`created_at`,`updated_at`) VALUES('权限测试','权限路径测试','2023-02-20 09:43:25','2023-02-20 09:43:25') 
+Error: Error 1062 (23000): Duplicate entry '权限测试' for key 'permission_info.unique_name'
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core.go:663
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core.go:440
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_model_insert.go:202
+8.  goFrameMall/internal/logic/permission.(*sPermission).Create
+    /Users/alulu/GolandProjects/goFrameMall/internal/logic/permission/permission.go:24
+9.  goFrameMall/internal/controller.(*cPermission).Create
+    /Users/alulu/GolandProjects/goFrameMall/internal/controller/permission.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+16. goFrameMall/internal/logic/middleware.(*sMiddleware).ResponseHandler
+    /Users/alulu/GolandProjects/goFrameMall/internal/logic/middleware/middleware.go:29
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+22. goFrameMall/internal/logic/middleware.(*sMiddleware).Ctx
+    /Users/alulu/GolandProjects/goFrameMall/internal/logic/middleware/middleware.go:74
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:55
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:54
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_middleware_tracing.go:78
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:96
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:95
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+34. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_server_handler.go:132
+
+2023-02-20 09:44:00.356 [DEBU] {38fd4127f56445179933891be091e538} [  2 ms] [default] [goFrameMall] [rows:5  ] SELECT `id`,`name`,`path`,`created_at`,`updated_at`,`deleted_at` FROM `permission_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-02-20 09:44:00.358 [DEBU] {38fd4127f56445179933891be091e538} [  2 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `permission_info` WHERE `deleted_at` IS NULL
+2023-02-20 09:44:00.358 [DEBU] {38fd4127f56445179933891be091e538} [  0 ms] [default] [goFrameMall] [rows:5  ] SELECT `id`,`name`,`path`,`created_at`,`updated_at` FROM `permission_info` WHERE `deleted_at` IS NULL LIMIT 0,10
+2023-02-20 09:44:43.868 [DEBU] {f0bfa548ff6445179a33891ba3fd731a} [  3 ms] [default] [goFrameMall] [rows:1  ] UPDATE `permission_info` SET `path`='修改权限路径测试',`name`=' 修改权限名称测试',`updated_at`='2023-02-20 09:44:43' WHERE (`id`=7) AND `deleted_at` IS NULL
+2023-02-20 09:46:16.442 [DEBU] {20f4acd6146545179b33891be91ddd2d} [  1 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-02-20 09:46:16.444 [DEBU] {20f4acd6146545179b33891be91ddd2d} [  1 ms] [default] [goFrameMall] [rows:1  ] [txid:1] DELETE FROM `permission_info` WHERE `id`=7
+2023-02-20 09:46:16.447 [DEBU] {20f4acd6146545179b33891be91ddd2d} [  3 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT

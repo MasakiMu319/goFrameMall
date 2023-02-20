@@ -33,6 +33,7 @@ var (
 					controller.Login,
 					controller.Data,
 					controller.Role,
+					controller.Permission,
 				) //登录
 				group.Group("/", func(group *ghttp.RouterGroup) {
 					group.Middleware(service.Middleware().Auth)

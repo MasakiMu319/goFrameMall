@@ -10,6 +10,7 @@ import (
 	_ "goFrameMall/internal/logic/data"
 	_ "goFrameMall/internal/logic/login"
 	_ "goFrameMall/internal/logic/middleware"
+	_ "goFrameMall/internal/logic/permission"
 	_ "goFrameMall/internal/logic/position"
 	_ "goFrameMall/internal/logic/role"
 	_ "goFrameMall/internal/logic/rotation"
