@@ -8,6 +8,7 @@ import (
 	_ "goFrameMall/internal/logic/admin"
 	_ "goFrameMall/internal/logic/bizctx"
 	_ "goFrameMall/internal/logic/data"
+	_ "goFrameMall/internal/logic/file"
 	_ "goFrameMall/internal/logic/login"
 	_ "goFrameMall/internal/logic/middleware"
 	_ "goFrameMall/internal/logic/permission"
