@@ -1,0 +1,7 @@
+2023-02-20 09:14:05.819 [DEBU] {40350f5453634517664bf211ee5a61e2} [  9 ms] [default] [goFrameMall] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-02-20 09:14:05.828 [DEBU] {40350f5453634517664bf211ee5a61e2} [  8 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `role_permission_info`(`permission_id`,`created_at`,`updated_at`,`role_id`) VALUES(1,'2023-02-20 09:14:05','2023-02-20 09:14:05',1) 
+2023-02-20 09:14:16.933 [DEBU] {f8a359ea55634517674bf2111372d7ed} [  3 ms] [default] [goFrameMall] [rows:1  ] DELETE FROM `role_permission_info` WHERE `role_id`=1 AND `permission_id`=1
+2023-02-20 09:14:58.451 [DEBU] {484464955f634517048e4625a0159069} [  5 ms] [default] [goFrameMall] [rows:5  ] SHOW FULL COLUMNS FROM `role_permission_info`
+2023-02-20 09:14:58.453 [DEBU] {484464955f634517048e4625a0159069} [  1 ms] [default] [goFrameMall] [rows:0  ] DELETE FROM `role_permission_info` WHERE `permission_id`=1 AND `role_id`=1
+2023-02-20 09:15:02.690 [DEBU] {00f6609260634517058e4625bff7f3e3} [  1 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `role_permission_info`(`updated_at`,`role_id`,`permission_id`,`created_at`) VALUES('2023-02-20 09:15:02',1,1,'2023-02-20 09:15:02') 
+2023-02-20 09:15:18.992 [DEBU] {081aed5d64634517068e4625004a068c} [  3 ms] [default] [goFrameMall] [rows:1  ] DELETE FROM `role_permission_info` WHERE `permission_id`=1 AND `role_id`=1
