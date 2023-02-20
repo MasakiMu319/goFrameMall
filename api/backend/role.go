@@ -53,7 +53,7 @@ type AddPermissionRes struct {
 }
 
 type DeletePermissionReq struct {
-	g.Meta       `path:"/backend/role/delete/permission" method:"post" tags:"角色" summary:"角色删除权限"`
+	g.Meta       `path:"/backend/role/delete/permission" method:"delete" tags:"角色" summary:"角色删除权限"`
 	RoleId       uint `json:"role_id"  desc:"角色 id"`
 	PermissionId uint `json:"permission_id" desc:"权限 id"`
 }
