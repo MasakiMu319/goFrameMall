@@ -1,0 +1,133 @@
+2023-03-04 16:51:51.346 [DEBU] {a04901f4442b49177304810b143a9243} [ 19 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 16:51:51.365 [ERRO] {a04901f4442b49177304810b143a9243} [  6 ms] [default] [goFrameMall] [rows:0  ] INSERT INTO `order_info`(`price`,`remark`,`actual_price`,`number`,`user_id`,`updated_at`,`pay_at`,`status`,`consignee_name`,`pay_type`,`created_at`,`consignee_phone`) VALUES(1000,'新增订单测试',990,'1677919911325739000767',1,'2023-03-04 16:51:51','',0,'新增测试',1,'2023-03-04 16:51:51','新增测试') 
+Error: Error 1292 (22007): Incorrect datetime value: '' for column 'pay_at' at row 1
+Stack:
+1.  github.com/gogf/gf/v2/database/gdb.(*Core).writeSqlToLogger
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core.go:663
+2.  github.com/gogf/gf/v2/database/gdb.(*Core).DoCommit
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core_underlying.go:278
+3.  github.com/gogf/gf/v2/database/gdb.(*Core).DoExec
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core_underlying.go:135
+4.  github.com/gogf/gf/v2/database/gdb.(*Core).DoInsert
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_core.go:440
+5.  github.com/gogf/gf/v2/database/gdb.(*HookInsertInput).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_model_hook.go:122
+6.  github.com/gogf/gf/v2/database/gdb.(*Model).doInsertWithOption
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_model_insert.go:371
+7.  github.com/gogf/gf/v2/database/gdb.(*Model).InsertAndGetId
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/database/gdb/gdb_model_insert.go:202
+8.  goFrameMall/internal/logic/order.(*sOrder).Create
+    /Users/alulu/GolandProjects/goFrameMall/internal/logic/order/order.go:31
+9.  goFrameMall/internal/controller.(*cOrder).Create
+    /Users/alulu/GolandProjects/goFrameMall/internal/controller/order.go:16
+10. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:152
+11. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+12. github.com/gogf/gf/v2/net/ghttp.(*middleware).callHandlerFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:129
+13. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:75
+14. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+15. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+16. goFrameMall/internal/logic/middleware.(*sMiddleware).ResponseHandler
+    /Users/alulu/GolandProjects/goFrameMall/internal/logic/middleware/middleware.go:29
+17. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:55
+18. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+19. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:54
+20. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+21. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+22. goFrameMall/internal/logic/middleware.(*sMiddleware).Ctx
+    /Users/alulu/GolandProjects/goFrameMall/internal/logic/middleware/middleware.go:74
+23. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:55
+24. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+25. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:54
+26. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+27. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+28. github.com/gogf/gf/v2/net/ghttp.internalMiddlewareServerTracing
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_middleware_tracing.go:78
+29. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1.5
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:96
+30. github.com/gogf/gf/v2/net/ghttp.niceCallFunc
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_func.go:55
+31. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next.func1
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:95
+32. github.com/gogf/gf/v2/util/gutil.TryCatch
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/util/gutil/gutil.go:56
+33. github.com/gogf/gf/v2/net/ghttp.(*middleware).Next
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_request_middleware.go:49
+34. github.com/gogf/gf/v2/net/ghttp.(*Server).ServeHTTP
+    /Users/alulu/go/pkg/mod/github.com/gogf/gf/v2@v2.3.1/net/ghttp/ghttp_server_handler.go:132
+
+2023-03-04 17:01:45.885 [DEBU] {40a1f261cf2b491779ad2d25aed4c1da} [  9 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 17:01:45.894 [DEBU] {40a1f261cf2b491779ad2d25aed4c1da} [  8 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `order_info`(`actual_price`,`user_id`,`pay_type`,`pay_at`,`price`,`consignee_name`,`number`,`status`,`consignee_phone`,`created_at`,`remark`,`updated_at`) VALUES(990,1,1,'2023-03-04 17:01:45',1000,'新增测试','1677920505874707000425',0,'新增测试','2023-03-04 17:01:45','新增订单测试','2023-03-04 17:01:45') 
+2023-03-04 17:04:49.430 [DEBU] {a0f5791efa2b491716f6ba2fb003858c} [  4 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 17:04:49.432 [DEBU] {a0f5791efa2b491716f6ba2fb003858c} [  2 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `order_info`(`created_at`,`pay_type`,`number`,`consignee_address`,`pay_at`,`updated_at`,`remark`,`actual_price`,`status`,`consignee_phone`,`user_id`,`consignee_name`,`price`) VALUES('2023-03-04 17:04:49',1,'1677920689425712000638','新增测试','2023-03-04 17:04:49','2023-03-04 17:04:49','新增订单测试',990,0,'新增测试',1,'新增测试',1000) 
+2023-03-04 20:56:57.288 [DEBU] {48bfccf2a438491791b65c00fd4f27d9} [ 14 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-03-04 20:56:57.296 [DEBU] {48bfccf2a438491791b65c00fd4f27d9} [  7 ms] [default] [goFrameMall] [rows:13 ] [txid:1] SHOW FULL COLUMNS FROM `order_goods_info`
+2023-03-04 20:56:57.302 [DEBU] {48bfccf2a438491791b65c00fd4f27d9} [  6 ms] [default] [goFrameMall] [rows:1  ] [txid:1] UPDATE `order_goods_info` SET `price`=100,`remark`='更新备注测试',`updated_at`='2023-03-04 20:56:57',`pay_type`=2,`count`=10,`coupon_price`=10,`actual_price`=90 WHERE (`goods_id`=2) AND (`id`=3) AND (`status`=0)
+2023-03-04 20:56:57.305 [DEBU] {48bfccf2a438491791b65c00fd4f27d9} [  3 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
+2023-03-04 20:59:12.020 [DEBU] {38cb4252c438491792b65c00e8eec9a1} [  3 ms] [default] [goFrameMall] [rows:0  ] [txid:2] BEGIN
+2023-03-04 20:59:12.022 [DEBU] {38cb4252c438491792b65c00e8eec9a1} [  1 ms] [default] [goFrameMall] [rows:1  ] [txid:2] UPDATE `order_goods_info` SET `count`=10,`price`=100,`coupon_price`=10,`actual_price`=90,`pay_type`=2,`remark`='更新备注测试',`updated_at`='2023-03-04 20:59:12' WHERE (`goods_id`=2) AND (`id`=3) AND (`status`=0)
+2023-03-04 20:59:12.024 [DEBU] {38cb4252c438491792b65c00e8eec9a1} [  1 ms] [default] [goFrameMall] [rows:0  ] [txid:2] COMMIT
+2023-03-04 20:59:24.918 [DEBU] {d85a0f53c738491793b65c004e7bdc58} [  1 ms] [default] [goFrameMall] [rows:0  ] [txid:3] BEGIN
+2023-03-04 20:59:24.923 [DEBU] {d85a0f53c738491793b65c004e7bdc58} [  1 ms] [default] [goFrameMall] [rows:1  ] [txid:3] UPDATE `order_goods_info` SET `coupon_price`=10,`updated_at`='2023-03-04 20:59:24',`actual_price`=90,`pay_type`=2,`price`=100,`count`=10,`remark`='更新备注测试' WHERE (`goods_id`=2) AND (`id`=3) AND (`status`=0)
+2023-03-04 20:59:24.925 [DEBU] {d85a0f53c738491793b65c004e7bdc58} [  2 ms] [default] [goFrameMall] [rows:0  ] [txid:3] COMMIT
+2023-03-04 21:01:13.212 [DEBU] {98e56089e038491794b65c00cd4c9c87} [ 11 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:01:13.214 [DEBU] {98e56089e038491794b65c00cd4c9c87} [  2 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:01:13.221 [DEBU] {98e56089e038491794b65c00cd4c9c87} [  6 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:01:13.222 [DEBU] {98e56089e038491794b65c00cd4c9c87} [  0 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:06:41.456 [DEBU] {58c827f62c394917229e1c445daaaa6b} [ 11 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:06:41.459 [DEBU] {58c827f62c394917229e1c445daaaa6b} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:06:41.463 [DEBU] {58c827f62c394917229e1c445daaaa6b} [  2 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:06:41.464 [DEBU] {58c827f62c394917229e1c445daaaa6b} [  0 ms] [default] [goFrameMall] [rows:10 ] SELECT `number`,`user_id`,`pay_type`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:14:39.277 [DEBU] {c01360369c3949172ef82e2c3275832f} [ 10 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:14:39.279 [DEBU] {c01360369c3949172ef82e2c3275832f} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:14:39.281 [DEBU] {c01360369c3949172ef82e2c3275832f} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:15:01.665 [DEBU] {c09a016da13949172653723b13ca6c63} [  8 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:15:01.666 [DEBU] {c09a016da13949172653723b13ca6c63} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:15:01.668 [DEBU] {c09a016da13949172653723b13ca6c63} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:15:01.669 [DEBU] {c09a016da13949172653723b13ca6c63} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`actual_price`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:17:23.963 [DEBU] {c0bfd58ec23949177be4c220d160450c} [  7 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:17:23.966 [DEBU] {c0bfd58ec23949177be4c220d160450c} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:17:23.968 [DEBU] {c0bfd58ec23949177be4c220d160450c} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:17:23.969 [DEBU] {c0bfd58ec23949177be4c220d160450c} [  0 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:18:52.287 [DEBU] {50a4521fd73949177ae96b1bec2fab6f} [  7 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:18:52.291 [DEBU] {50a4521fd73949177ae96b1bec2fab6f} [  2 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:18:52.293 [DEBU] {50a4521fd73949177ae96b1bec2fab6f} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:18:52.295 [DEBU] {50a4521fd73949177ae96b1bec2fab6f} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `number`,`user_id`,`pay_type`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`actual_price`,`id`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:19:19.990 [DEBU] {e8bdf492dd3949177be96b1b4d9306e1} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:19:19.994 [DEBU] {e8bdf492dd3949177be96b1b4d9306e1} [  2 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:19:19.995 [DEBU] {e8bdf492dd3949177be96b1b4d9306e1} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `number`,`user_id`,`pay_type`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`actual_price`,`id`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:19:52.006 [DEBU] {d8aafb06e5394917657b515cf33ede24} [  6 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:19:52.008 [DEBU] {d8aafb06e5394917657b515cf33ede24} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:19:52.010 [DEBU] {d8aafb06e5394917657b515cf33ede24} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:19:52.012 [DEBU] {d8aafb06e5394917657b515cf33ede24} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`actual_price`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:20:29.719 [DEBU] {c05416cfed394917667b515c185ac1e5} [  3 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:20:29.722 [DEBU] {c05416cfed394917667b515c185ac1e5} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:20:29.723 [DEBU] {c05416cfed394917667b515c185ac1e5} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`actual_price`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:41:22.894 [DEBU] {48e7bf95113b491760ca304a6ae0aac2} [  8 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:41:22.896 [DEBU] {48e7bf95113b491760ca304a6ae0aac2} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:41:22.898 [DEBU] {48e7bf95113b491760ca304a6ae0aac2} [  1 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:45:10.055 [DEBU] {40253b78463b491768573375467c9f53} [ 22 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:45:10.058 [DEBU] {40253b78463b491768573375467c9f53} [  1 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`created_at`,`updated_at`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`coupon_price`,`actual_price` FROM `order_info` LIMIT 0,10
+2023-03-04 21:45:10.061 [DEBU] {40253b78463b491768573375467c9f53} [  2 ms] [default] [goFrameMall] [rows:1  ] SELECT COUNT(1) FROM `order_info`
+2023-03-04 21:45:10.067 [DEBU] {40253b78463b491768573375467c9f53} [  6 ms] [default] [goFrameMall] [rows:10 ] SELECT `id`,`number`,`user_id`,`pay_type`,`remark`,`pay_at`,`status`,`consignee_name`,`consignee_phone`,`consignee_address`,`price`,`actual_price`,`created_at`,`updated_at` FROM `order_info` LIMIT 0,10
+2023-03-04 21:57:46.651 [DEBU] {48b9dea0f63b491714b3707ff8edb658} [ 29 ms] [default] [goFrameMall] [rows:15 ] SHOW FULL COLUMNS FROM `order_info`
+2023-03-04 21:57:46.660 [DEBU] {48b9dea0f63b491714b3707ff8edb658} [  9 ms] [default] [goFrameMall] [rows:1  ] INSERT INTO `order_info`(`created_at`,`status`,`actual_price`,`consignee_phone`,`price`,`updated_at`,`consignee_address`,`pay_type`,`number`,`consignee_name`,`user_id`,`pay_at`,`remark`) VALUES('2023-03-04 21:57:46',0,990,'新增测试',1000,'2023-03-04 21:57:46','新增测试',1,'1677938266621501000379','新增测试',1,'2023-03-04 21:57:46','修改新增订单测试') 
+2023-03-04 21:59:20.914 [DEBU] {384f1c950c3c49170fe5290f6a9c869b} [  2 ms] [default] [goFrameMall] [rows:0  ] [txid:1] BEGIN
+2023-03-04 21:59:20.918 [DEBU] {384f1c950c3c49170fe5290f6a9c869b} [  3 ms] [default] [goFrameMall] [rows:13 ] [txid:1] SHOW FULL COLUMNS FROM `order_goods_info`
+2023-03-04 21:59:20.922 [DEBU] {384f1c950c3c49170fe5290f6a9c869b} [  4 ms] [default] [goFrameMall] [rows:1  ] [txid:1] UPDATE `order_goods_info` SET `remark`='修改更新备注测试',`coupon_price`=10,`updated_at`='2023-03-04 21:59:20',`count`=10,`price`=100,`actual_price`=90,`pay_type`=2 WHERE (`goods_id`=2) AND (`id`=3) AND (`status`=0)
+2023-03-04 21:59:20.925 [DEBU] {384f1c950c3c49170fe5290f6a9c869b} [  3 ms] [default] [goFrameMall] [rows:0  ] [txid:1] COMMIT
