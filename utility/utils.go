@@ -24,24 +24,24 @@ import (
 	"time"
 )
 
-// 密码加密
+// EncryptPassword 密码加密
 func EncryptPassword(password, salt string) string {
 	return gmd5.MustEncryptString(gmd5.MustEncryptString(password) + gmd5.MustEncryptString(salt))
 }
 
-// 时间戳转 yyyy-MM-dd HH:mm:ss
+// TimeStampToDateTime 时间戳转 yyyy-MM-dd HH:mm:ss
 func TimeStampToDateTime(timeStamp int64) string {
 	tm := gtime.NewFromTimeStamp(timeStamp)
 	return tm.Format("Y-m-d H:i:s")
 }
 
-// 时间戳转 yyyy-MM-dd
+// TimeStampToDate 时间戳转 yyyy-MM-dd
 func TimeStampToDate(timeStamp int64) string {
 	tm := gtime.NewFromTimeStamp(timeStamp)
 	return tm.Format("Y-m-d")
 }
 
-// 获取当前请求接口域名
+// GetDomain 获取当前请求接口域名
 func GetDomain(r *ghttp.Request) (string, error) {
 	pathInfo, err := gurl.ParseURL(r.GetUrl(), -1)
 	if err != nil {
@@ -57,7 +57,7 @@ func GetUserAgent(ctx context.Context) string {
 	return ghttp.RequestFromCtx(ctx).Header.Get("User-Agent")
 }
 
-// 获取客户端IP
+// GetClientIp 获取客户端IP
 func GetClientIp(r *ghttp.Request) string {
 	ip := r.Header.Get("X-Forwarded-For")
 	if ip == "" {
@@ -66,7 +66,7 @@ func GetClientIp(r *ghttp.Request) string {
 	return ip
 }
 
-// 服务端ip
+// GetLocalIP 服务端ip
 func GetLocalIP() (ip string, err error) {
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {
@@ -88,7 +88,7 @@ func GetLocalIP() (ip string, err error) {
 	return
 }
 
-// 获取ip所属城市
+// GetCityByIp 获取ip所属城市
 func GetCityByIp(ip string) string {
 	if ip == "" {
 		return ""
@@ -113,7 +113,7 @@ func GetCityByIp(ip string) string {
 	}
 }
 
-// 日期字符串转时间戳（秒）
+// StrToTimestamp 日期字符串转时间戳（秒）
 func StrToTimestamp(dateStr string) int64 {
 	tm, err := gtime.StrToTime(dateStr)
 	if err != nil {
@@ -208,7 +208,7 @@ func ParseDSN(cfg *gdb.ConfigNode) (err error) {
 	return
 }
 
-// 获取附件真实路径
+// GetRealFilesUrl 获取附件真实路径
 func GetRealFilesUrl(r *ghttp.Request, path string) (realPath string, err error) {
 	if gstr.ContainsI(path, "http") {
 		realPath = path
@@ -222,7 +222,7 @@ func GetRealFilesUrl(r *ghttp.Request, path string) (realPath string, err error)
 	return
 }
 
-// 获取附件相对路径
+// GetFilesPath 获取附件相对路径
 func GetFilesPath(fileUrl string) (path string, err error) {
 	gVarType, err := g.Cfg().Get(context.Background(), "upload.type")
 	if err != nil {
@@ -251,7 +251,7 @@ func GetFilesPath(fileUrl string) (path string, err error) {
 	return
 }
 
-// 货币转化为分
+// CurrencyLong 货币转化为分
 func CurrencyLong(currency interface{}) int64 {
 	strArr := gstr.Split(gconv.String(currency), ".")
 	switch len(strArr) {
@@ -278,24 +278,20 @@ func GetExcPath() string {
 	return strings.Replace(ret, "\\", "/", -1)
 }
 
-// 流水号
+// CreateLogSn 流水号
 func CreateLogSn(prefix string) string {
 	rand.Seed(time.Now().UnixNano())
 	return prefix + strings.Replace(time.Now().Format("20060102150405.000"), ".", "", -1) + strconv.Itoa(rand.Intn(899)+100)
 }
 
-// 获取随机整数
+// RandInt 获取随机整数
 func RandInt(max int) int {
 	rand.Seed(time.Now().UnixNano())
 	return rand.Intn(max)
 }
 
-//获取今天的开始时间 0点
-//gtime.New(time.Now()).StartOfDay()
-
-//获取今天的结束时间 24点
-//gtime.New(time.Now()).EndOfDay()
-
-//日期范围查询
-//whereCondition.Set(dao.UserInfo.Columns.CreatedAt+" >=", gtime.New(req.Date).StartOfDay())
-//whereCondition.Set(dao.UserInfo.Columns.CreatedAt+" <=", gtime.New(req.Date).EndOfDay())
+func GetOderNumber() (number string) {
+	rand.NewSource(time.Now().UnixNano())
+	number = gconv.String(time.Now().UnixNano()) + gconv.String(rand.Intn(1000))
+	return
+}
